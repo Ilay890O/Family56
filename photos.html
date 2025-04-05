@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>תמונות משפחתיות</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>תמונות משפחתיות</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">דף הבית</a></li>
+                <li><a href="yoman.html">היומן המשפחתי</a></li>
+                <li><a href="achievements.html">ההישגים השבועיים</a></li>
+                <li><a href="events.html">האירועים הקרובים</a></li>
+                <li><a href="memories.html">הזיכרונות הישנים</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>הוסף תמונה חדשה</h2>
+            <form id="photoForm">
+                <label for="photoImage">בחר תמונה:</label>
+                <input type="file" id="photoImage" name="photoImage" required>
+                <button type="submit">הוסף תמונה</button>
+            </form>
+        </section>
+        <section>
+            <h2>תמונות משפחתיות</h2>
+            <div id="photosList">
+                <!-- התמונות יוצגו כאן -->
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>© 2025 יומן משפחתי</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
