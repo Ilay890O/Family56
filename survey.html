@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>סקר משפחתי</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>סקר משפחתי</h1>
+    </header>
+    <main>
+        <section>
+            <h2>מה לעשות בסוף השבוע?</h2>
+            <form id="surveyForm">
+                <label for="option1">
+                    <input type="radio" id="option1" name="activity" value="טיול">
+                    טיול בטבע
+                </label><br>
+                <label for="option2">
+                    <input type="radio" id="option2" name="activity" value="סרט">
+                    לראות סרט יחד
+                </label><br>
+                <label for="option3">
+                    <input type="radio" id="option3" name="activity" value="משחק">
+                    משחקי קופסה משפחתיים
+                </label><br>
+                <button type="submit">שלח הצבעה</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>© 2025 יומן משפחתי</p>
+    </footer>
+
+    <script>
+        document.getElementById("surveyForm").addEventListener("submit", function (e) {
+            e.preventDefault();
+            const selectedOption = document.querySelector('input[name="activity"]:checked');
+
+            if (selectedOption) {
+                const activity = selectedOption.value;
+                const previousVotes = JSON.parse(localStorage.getItem('surveyVotes')) || {};
+                
+                previousVotes[activity] = (previousVotes[activity] || 0) + 1;
+                localStorage.setItem('surveyVotes', JSON.stringify(previousVotes));
+
+                alert("ההצבעה נרשמה! תודה על ההשתתפות.");
+            } else {
+                alert("נא לבחור אפשרות.");
+            }
+        });
+
+        // הצגת התוצאות
+        document.addEventListener("DOMContentLoaded", function () {
+            const results = JSON.parse(localStorage.getItem('surveyVotes')) || {};
+            let resultText = "<h3>תוצאות הסקר:</h3>";
+            for (let activity in results) {
+                resultText += `<p>${activity}: ${results[activity]} הצבעות</p>`;
+            }
+            document.querySelector("main").innerHTML += resultText;
+        });
+    </script>
+</body>
+</html>
