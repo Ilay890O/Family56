@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>פעילויות משפחתיות</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>פעילויות משפחתיות</h1>
+        <nav>
+            <ul>
+                <li><a href="yoman.html">יומן משפחתי</a></li>
+                <li><a href="achievements.html">הישגים</a></li>
+                <li><a href="events.html">אירועים</a></li>
+                <li><a href="photos.html">תמונות</a></li>
+                <li><a href="memories.html">זיכרונות</a></li>
+                <li><a href="wishlist.html">רשימת משאלות</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section id="activitiesSection">
+            <h2>הוסף פעילות משפחתית</h2>
+            <form id="activityForm">
+                <label for="activityName">שם הפעילות</label>
+                <input type="text" id="activityName" placeholder="הכנס שם לפעילות" required>
+                <button type="submit">הוסף פעילות</button>
+            </form>
+            <h3>הפעילויות המומלצות:</h3>
+            <div id="activitiesList">
+                <!-- פעילויות יוצגו כאן -->
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <p>© 2025 יומן משפחתי</p>
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html>
