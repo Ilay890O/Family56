@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>האירועים הקרובים</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>האירועים הקרובים</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">דף הבית</a></li>
+                <li><a href="yoman.html">היומן המשפחתי</a></li>
+                <li><a href="achievements.html">ההישגים השבועיים</a></li>
+                <li><a href="photos.html">תמונות משפחתיות</a></li>
+                <li><a href="memories.html">הזיכרונות הישנים</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>הוסף אירוע חדש</h2>
+            <form id="eventForm">
+                <label for="eventTitle">כותרת האירוע:</label>
+                <input type="text" id="eventTitle" name="eventTitle" required>
+                <label for="eventDate">תאריך האירוע:</label>
+                <input type="date" id="eventDate" name="eventDate" required>
+                <button type="submit">הוסף אירוע</button>
+            </form>
+        </section>
+        <section>
+            <h2>האירועים הקרובים</h2>
+            <div id="eventsList">
+                <!-- אירועים יוצגו כאן -->
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>© 2025 יומן משפחתי</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+
+
+<!DOCTYPE html>
+<html lang="he">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>אירועים</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>אירועים קרובים</h1>
+        <nav>
+            <ul>
+                <li><a href="yoman.html">יומן משפחתי</a></li>
+                <li><a href="achievements.html">הישגים</a></li>
+                <li><a href="events.html">אירועים</a></li>
+                <li><a href="photos.html">תמונות</a></li>
+                <li><a href="memories.html">זיכרונות</a></li>
+                <li><a href="wishlist.html">רשימת משאלות</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section id="eventsSection">
+            <h2>הוסף אירוע חדש</h2>
+            <form id="eventForm">
+                <label for="eventTitle">כותרת האירוע</label>
+                <input type="text" id="eventTitle" placeholder="הכנס את שם האירוע" required>
+                <label for="eventDate">תאריך האירוע</label>
+                <input type="datetime-local" id="eventDate" required>
+                <button type="submit">הוסף אירוע</button>
+            </form>
+            <h3>האירועים הקרובים:</h3>
+            <div id="eventsList">
+                <!-- האירועים יוצגו כאן -->
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <p>© 2025 יומן משפחתי</p>
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html>
