@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>שאלון כיף</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>שאלון כיף</h1>
+        <nav>
+            <ul>
+                <li><a href="yoman.html">יומן משפחתי</a></li>
+                <li><a href="achievements.html">הישגים</a></li>
+                <li><a href="events.html">אירועים</a></li>
+                <li><a href="photos.html">תמונות</a></li>
+                <li><a href="memories.html">זיכרונות</a></li>
+                <li><a href="wishlist.html">רשימת משאלות</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section id="quizSection">
+            <h2>מענה על השאלון</h2>
+            <form id="quizForm">
+                <label for="question1">מה הסרט האהוב עליך?</label>
+                <input type="text" id="question1" required>
+                
+                <label for="question2">מה המאכל האהוב עליך?</label>
+                <input type="text" id="question2" required>
+                
+                <button type="submit">שלח תשובות</button>
+            </form>
+            <h3>תשובות קודמות:</h3>
+            <div id="quizAnswers">
+                <!-- התשובות יופיעו כאן -->
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <p>© 2025 יומן משפחתי</p>
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html>
