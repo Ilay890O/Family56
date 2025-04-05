@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>הגדרות המשתמש</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        window.onload = function() {
+            const username = localStorage.getItem('username');  // קבלת שם המשתמש ששמור ב-localStorage
+            const profilePic = localStorage.getItem('profilePic'); // קבלת תמונת פרופיל אם קיימת
+
+            // אם המשתמש לא קיים או לא מחובר, להפנות לדף הכניסה
+            if (!username) {
+                alert("אנא התחבר לפני שתוכל לשנות הגדרות.");
+                window.location.href = "login.html";  // הפנייה לדף הכניסה
+            }
+
+            // הצגת שם המשתמש הנוכחי
+            document.getElementById("currentUsername").textContent = username;
+            // הצגת תמונת פרופיל אם ישנה
+            if (profilePic) {
+                document.getElementById("profilePic").src = profilePic;
+            }
+        };
+
+        function updateUsername() {
+            const newUsername = document.getElementById("newUsername").value;  // קריאת שם המשתמש החדש
+            if (newUsername) {
+                localStorage.setItem('username', newUsername);  // עדכון שם המשתמש
+                alert("שם המשתמש שונה בהצלחה!");
+                window.location.href = "index.html";  // הפנייה לדף הבית
+            } else {
+                alert("אנא הזן שם משתמש חדש.");
+            }
+        }
+
+        function updateProfilePic() {
+            const newProfilePic = document.getElementById("profilePicInput").files[0]; // קריאת קובץ תמונת הפרופיל
+            if (newProfilePic) {
+                const reader = new FileReader();
+                reader.onloadend = function() {
+                    localStorage.setItem('profilePic', reader.result); // שמירה ב-localStorage
+                    document.getElementById("profilePic").src = reader.result; // הצגת התמונה החדשה
+                    alert("תמונת פרופיל שונתה בהצלחה!");
+                };
+                reader.readAsDataURL(newProfilePic); // קריאת התמונה
+            } else {
+                alert("אנא בחר תמונה.");
+            }
+        }
+
+        function changePassword() {
+            const newPassword = document.getElementById("newPassword").value; // קריאת סיסמא חדשה
+            if (newPassword) {
+                localStorage.setItem('password', newPassword); // שמירה ב-localStorage
+                alert("הסיסמה שונתה בהצלחה!");
+            } else {
+                alert("אנא הזן סיסמה חדשה.");
+            }
+        }
+
+        function toggleNotifications() {
+            const notificationsEnabled = document.getElementById("notificationsToggle").checked;
+            localStorage.setItem('notificationsEnabled', notificationsEnabled); // שמירה ב-localStorage
+            alert(`הגדרות ההתראות שונו: ${notificationsEnabled ? 'הפעלה' : 'כבוי'}`);
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>הגדרות המשתמש</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">דף הבית</a></li>
+                <li><a href="yoman.html">היומן המשפחתי</a></li>
+                <li><a href="achievements.html">ההישגים השבועיים</a></li>
+                <li><a href="events.html">האירועים הקרובים</a></li>
+                <li><a href="photos.html">תמונות משפחתיות</a></li>
+                <li><a href="memories.html">הזיכרונות הישנים</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>הגדרות חשבון</h2>
+            <p><strong>שם המשתמש הנוכחי:</strong> <span id="currentUsername"></span></p>
+
+            <h3>שנה את שם המשתמש:</h3>
+            <input type="text" id="newUsername" placeholder="הזן שם משתמש חדש" />
+            <button onclick="updateUsername()">עדכן שם משתמש</button>
+        </section>
+
+        <section>
+            <h3>שנה את תמונת הפרופיל:</h3>
+            <img id="profilePic" src="default-profile-pic.png" alt="תמונת פרופיל" width="100" height="100"/>
+            <br />
+            <input type="file" id="profilePicInput" />
+            <button onclick="updateProfilePic()">עדכן תמונת פרופיל</button>
+        </section>
+
+        <section>
+            <h3>שנה סיסמה:</h3>
+            <input type="password" id="newPassword" placeholder="הזן סיסמה חדשה" />
+            <button onclick="changePassword()">עדכן סיסמה</button>
+        </section>
+
+        <section>
+            <h3>הגדרות התראות:</h3>
+            <label for="notificationsToggle">הפעל התראות:</label>
+            <input type="checkbox" id="notificationsToggle" onclick="toggleNotifications()" />
+        </section>
+
+        <section>
+            <button onclick="window.location.href='index.html'">חזור לדף הבית</button>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 יומן משפחתי</p>
+    </footer>
+</body>
+</html>
