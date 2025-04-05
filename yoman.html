@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>היומן המשפחתי</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>היומן המשפחתי</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">דף הבית</a></li>
+                <li><a href="achievements.html">ההישגים השבועיים</a></li>
+                <li><a href="events.html">האירועים הקרובים</a></li>
+                <li><a href="photos.html">תמונות משפחתיות</a></li>
+                <li><a href="memories.html">הזיכרונות הישנים</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>הוסף פוסט חדש</h2>
+            <form id="postForm">
+                <label for="postText">הפוסט שלך:</label>
+                <textarea id="postText" name="postText" required></textarea>
+                <label for="postImage">תמונה (אופציונלי):</label>
+                <input type="file" id="postImage" name="postImage">
+                <button type="submit">הוסף פוסט</button>
+            </form>
+        </section>
+        <section>
+            <h2>הפוסטים האחרונים</h2>
+            <div id="postsList">
+                <!-- הפוסטים יוצגו כאן -->
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>© 2025 יומן משפחתי</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
