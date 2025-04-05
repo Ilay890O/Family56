@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>היומן המשפחתי</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* עיצוב לתמונת פרופיל */
+        .profile-image {
+            width: 80px; /* גודל קטן לתמונה */
+            height: 80px;
+            border-radius: 50%; /* הופך את התמונה לעיגול */
+            position: fixed; /* ממקם את התמונה בעקביות בכל הדפים */
+            top: 10px; /* ממקם את התמונה למעלה */
+            right: 10px; /* ממקם את התמונה בצד ימין */
+            object-fit: cover; /* מבטיח שהתמונה לא תמתח או תתעקם */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>ברוכים הבאים למשפחת אוחנה!</h1>
+        <nav>
+            <ul>
+                <li><a href="yoman.html">היומן המשפחתי</a></li>
+                <li><a href="achievements.html">ההישגים השבועיים</a></li>
+                <li><a href="events.html">האירועים הקרובים</a></li>
+                <li><a href="photos.html">תמונות משפחתיות</a></li>
+                <li><a href="memories.html">הזיכרונות הישנים</a></li>
+                <li><a href="profile.html">הגדרות</a></li> <!-- כפתור הגדרות -->
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>ברוכים הבאים לאזור המשפחתי שלנו!</h2>
+            <p>בואו להוסיף חוויות, תמונות, ולזכור את הרגעים החשובים ביותר שלנו כמשפחה.</p>
+        </section>
+        
+        <section>
+            <h2>הפעילויות שלנו:</h2>
+            <button onclick="window.location.href='admin.html'">פאנל ניהול (למנהל בלבד)</button>
+            <button onclick="window.location.href='chat.html'">צ'אט משפחתי</button>
+            <button onclick="window.location.href='shopping-list.html'">רשימת קניות משפחתית</button>
+            <button onclick="window.location.href='settings2.html'">הגדרות משתמש</button>
+            <button onclick="window.location.href='survey.html'">סקרים</button>
+        </section>
+    </main>
+    
+    <footer>
+        <p>© 2025 יומן משפחתי</p>
+    </footer>
+
+    <script>
+        // הצגת תמונת פרופיל אם ישנה
+        const profileImage = document.createElement('img');
+        profileImage.classList.add('profile-image');
+        document.body.appendChild(profileImage);
+
+        const storedImage = localStorage.getItem('profileImage');
+
+        if (storedImage) {
+            profileImage.src = storedImage; // הצגת התמונה שהמשתמש העלה
+        } else {
+            profileImage.src = 'default-profile.jpg'; // תמונה ברירת מחדל אם אין תמונה
+        }
+    </script>
+</body>
+</html>
+
+
+
